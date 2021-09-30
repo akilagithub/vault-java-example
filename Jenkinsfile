@@ -12,7 +12,7 @@ node {
 
     // optional configuration, if you do not provide this the next higher configuration
     // (e.g. folder or global) will be used
-    def configuration = [vaultUrl: 'http://52.190.2.122',
+    def configuration = [vaultUrl: 'http://10.0.0.4',
                          vaultCredentialId: 'jenkins-vault-approle',
                          engineVersion: 1]
     // inside this block your credentials will be available as env variables
