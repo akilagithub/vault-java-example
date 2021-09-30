@@ -4,44 +4,10 @@ def projectProperties = [
 properties(projectProperties)
 pipeline {
   agent any
-  stages { 
-    stage('Cleanup') {
-      steps {
-        withMaven(maven: 'maven-3.2.5') {
-          sh 'mvn clean'
-        }
-        
-      }
-    }
-    stage('Test') {
-      steps {
-        withMaven(maven: 'maven-3.2.5') {
-          sh 'mvn test'
-        }
-        
-      }
-    }
-    stage('Compile') {
-      steps {
-        withMaven(maven: 'maven-3.2.5') {
-          sh 'mvn compile'
-        }
-        
-      }
-    }
-    stage('Package') {
-      steps {
-        withMaven(maven: 'maven-3.2.5') {
-          sh 'mvn package'
-        }
-        
-      }
-    }
-    stage('Notify') {
-      steps {
-        echo 'Build Successful!'
-      }
-    }
+  
+  
+   
+
     stage('Integration Tests') {
       steps {
       sh 'curl -o vault.zip https://releases.hashicorp.com/vault/0.7.0/vault_0.7.0_linux_arm.zip ; yes | unzip vault.zip'
